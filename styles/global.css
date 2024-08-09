@@ -1,0 +1,304 @@
+*, *::before, *::after {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow-x: hidden;
+  margin: 0;
+  background-image: url("../public/assets/gifs/bgPorfolio.gif");
+  background-position: center;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: white;
+  font-size: 1.2rem;
+}
+
+a,a:hover {
+  text-decoration: none !important;
+  color: white;
+  cursor: pointer;
+}
+
+.header {
+  width: 100%;
+}
+
+.navBar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 5rem 2rem 5rem;
+  transition: 0.5s;
+  width: 100%;
+}
+
+.mainPages {
+  display: flex;
+  flex-direction: row;
+  width: 40%;
+  justify-content: space-between;
+
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.page {
+  position: relative;
+}
+
+.page::after {
+  content: "";
+  background-color: white;
+  position: absolute;
+  width: 0;
+  left: 0;
+  height: 1px;
+  top: 100%;
+  transition: 0.5s;
+}
+
+.page:hover::after {
+  width: 100%;
+}
+
+.mainPagesIcon, .subNavBar {
+  display: none;
+  cursor: pointer;
+}
+
+.mainPagesIcon:has(.active) .subNavBar {
+  display: flex;
+}
+
+.subNavBar {
+  margin-top: 2rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+  background-color: blueviolet;
+}
+
+.name {
+  font-size: 1.3rem;
+}
+
+.navBar>div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.mainContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20rem;
+}
+
+.mainSection {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 10rem 0rem 10rem;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  text-align: center;
+  text-wrap: wrap;
+  width: 50%;
+
+}
+
+.greeting {
+  display: flex;
+  flex-direction: column;
+}
+
+.story-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.content-container {
+  width: 80%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.social-media {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.social-button-container {
+  padding: 1rem;
+  border-radius: 999px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: all .5s ease;
+  cursor: pointer;
+}
+
+.social-button-container:hover {
+  transform: scale(1.1);
+  box-shadow: inset 0 0 3px 3px red;
+  animation: in-n-out 1s ease-out
+}
+
+.imageContainer {
+  width: 15vw;
+  height: 25vw;
+  position: relative;
+
+}
+
+.imageFrame {
+  cursor: url('../public/assets/icons/cursor.png') 39 39, auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  rotate: 5deg;
+  transition: transform 1s;
+}
+
+.dogContainer {
+  width: 20vw;
+  height: 10vw
+}
+
+.dogImage {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes chosen {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.3);
+  }
+}
+
+@keyframes in-n-out {
+  0% {
+    box-shadow: inset 0 0 1px 1px red;
+  }
+
+  100% {
+    box-shadow: inset 0 0 3px 3px red;
+
+  }
+}
+
+@keyframes img-to-left {
+  0% {
+    transform: translateX(0) scale(1.3);
+  }
+
+  100% {
+    transform: translateX(-100vw) scale(1);
+  }
+}
+
+@keyframes img-comeback-right {
+  0% {
+    transform: translateX(-100vw);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes img-to-right {
+  0% {
+    transform: translateX(0) scale(1.3);
+  }
+
+  100% {
+    transform: translateX(40vw) scale(1);
+  }
+}
+
+@keyframes img-comeback-left {
+  0% {
+    transform: translateX(40vw);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@media (max-width: 900px) {
+  .navBar {
+    background-color: blueviolet;
+  }
+
+  .mainSection {
+    flex-direction: column;
+  }
+
+  .mainContainer {
+    height: fit-content;
+  }
+
+  .mainPages {
+    display: none;
+  }
+
+  .mainPagesIcon {
+    display: block;
+  }
+
+  .page {
+    text-align: center;
+    width: 100%;
+  }
+
+
+}
