@@ -28,7 +28,7 @@ body {
   font-size: 1.2rem;
 }
 
-a,a:hover {
+a, a:hover {
   text-decoration: none !important;
   color: white;
   cursor: pointer;
@@ -36,11 +36,13 @@ a,a:hover {
 
 .header {
   width: 100%;
+  position: relative;
+  top:0;
 }
 
 .navBar {
-  position: sticky;
   top: 0;
+  position: fixed;
   width: 100%;
   justify-content: center;
   align-items: center;
